@@ -1,0 +1,45 @@
+/* ========================================
+   Global Styles
+   ======================================== */
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #F9FAFB;
+  color: #1F2937;
+}
+
+/* ========================================
+   Chart Styles
+   ======================================== */
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 350px;
+  max-height: 400px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   Timeline Styles
+   ======================================== */
+
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #E5E7EB;
+}
+
+/* ========================================
+   Skill Button Styles
+   ======================================== */
+
+.skill-btn.active {
+  background-color: #2563EB;
+  color: white;
+  border-color: #2563EB;
+}

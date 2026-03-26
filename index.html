@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>엄윤식 | Web Publisher Portfolio</title>
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="엄윤식 | 4년 차 웹 퍼블리셔">
+    <meta property="og:description" content="시맨틱 마크업과 웹 접근성으로 단단한 UI를 구축합니다.">
+    <meta property="og:type" content="website">
+
+    <!-- External CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased scroll-smooth">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-bold text-xl text-blue-600">EYS.Publisher</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition">About</a>
+                    <a href="#skills" class="text-gray-600 hover:text-blue-600 font-medium transition">Skills</a>
+                    <a href="#experience" class="text-gray-600 hover:text-blue-600 font-medium transition">Experience</a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-600 font-medium transition">Projects</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-20 pb-12 px-4 bg-gradient-to-br from-blue-50 to-white">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div class="col-span-2 space-y-6">
+                <div class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">
+                    Web Publisher (4 Years)
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
+                    안녕하세요, <span class="text-blue-600">엄윤식</span>입니다.<br>
+                    단단하고 접근하기 쉬운 UI를 만듭니다.
+                </h1>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    <strong>BEM과 SCSS</strong>로 유지보수하기 좋은 단단한 UI를 구축하는 4년 차 퍼블리셔입니다.
+                    단순한 화면 구현을 넘어 <strong>시맨틱 마크업과 웹 접근성</strong>을 준수하며, 디자이너와 개발자 사이의 원활한 소통을 통해 프로젝트의 품질을 높입니다.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="mailto:yoon6e@gmail.com" class="flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                    <a href="http://github.com/eomzic" target="_blank" class="flex items-center gap-2 bg-white text-gray-800 border border-gray-300 px-5 py-3 rounded-lg shadow-sm hover:bg-gray-50 transition">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+                <div class="text-sm text-gray-500 pt-2">
+                    <i class="fas fa-map-marker-alt mr-2"></i> 서울시 강남구 자곡동 | <i class="fas fa-phone mr-2 ml-2"></i> 010-9488-3780
+                </div>
+            </div>
+            
+            <!-- Radar Chart: Publisher Core Competencies -->
+            <div class="col-span-1 bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                <h3 class="text-center font-bold text-gray-800 mb-4">Core Competencies</h3>
+                <div class="chart-container">
+                    <canvas id="competencyChart"></canvas>
+                </div>
+                <p class="text-xs text-center text-gray-400 mt-2">Publishing & UI Architecture</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="skills" class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-900">Technical Stack</h2>
+                <p class="text-gray-500 mt-2">웹 표준과 접근성을 준수하며, 효율적인 CSS 아키텍처를 설계합니다.</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex justify-center flex-wrap gap-2 mb-8" id="skill-filters">
+                <button class="skill-btn active px-4 py-2 rounded-full border border-gray-200 text-sm font-medium transition hover:border-blue-500" data-filter="all">All</button>
+                <button class="skill-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-medium transition hover:border-blue-500" data-filter="core">Core Markup</button>
+                <button class="skill-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-medium transition hover:border-blue-500" data-filter="arch">CSS Architecture</button>
+                <button class="skill-btn px-4 py-2 rounded-full border border-gray-200 text-sm font-medium transition hover:border-blue-500" data-filter="standard">Web Standards</button>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="skills-grid">
+                <!-- Skills injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Work Experience</h2>
+            <p class="text-gray-500 mb-10">총 4년 3개월 | 다수의 SI 및 에이전시 환경에서 UI/UX 품질을 책임졌습니다.</p>
+
+            <div class="relative pl-8 space-y-12">
+                <div class="timeline-line"></div>
+
+                <!-- Job 1 -->
+                <div class="relative z-10">
+                    <div class="absolute -left-10 mt-1.5 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">미디어포스앤컴퍼니</h3>
+                                <p class="text-blue-600 font-medium">사원 (WP팀)</p>
+                            </div>
+                            <span class="text-sm text-gray-400 bg-gray-100 px-3 py-1 rounded-full mt-2 md:mt-0">2023.10 ~ 현재</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-600 text-sm list-disc pl-5">
+                            <li><span class="font-semibold text-gray-800">공통 UI 컴포넌트 라이브러리화:</span> 반복 사용되는 UI를 모듈화하여 팀 내 작업 생산성 30% 향상</li>
+                            <li><span class="font-semibold text-gray-800">반응형 웹 최적화:</span> 320px ~ 1920px 해상도에 대응하는 Fluid/Adaptive 레이아웃 설계</li>
+                            <li><span class="font-semibold text-gray-800">크로스 브라우징:</span> 최신 브라우저 및 모바일 환경에서의 렌더링 호환성 완벽 검수</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative z-10">
+                    <div class="absolute -left-10 mt-1.5 w-4 h-4 rounded-full bg-gray-400 border-4 border-white shadow"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">온넷소프트</h3>
+                                <p class="text-gray-600 font-medium">주임/계장 (개발팀)</p>
+                            </div>
+                            <span class="text-sm text-gray-400 bg-gray-100 px-3 py-1 rounded-full mt-2 md:mt-0">2023.07 ~ 2023.09</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-600 text-sm list-disc pl-5">
+                            <li><span class="font-semibold text-gray-800">웹 접근성(WA) 품질인증 마크 획득 지원:</span> WAI-ARIA 및 논리적 초점 이동 완벽 구현</li>
+                            <li><span class="font-semibold text-gray-800">CMS UI 템플릿화:</span> 관리자/사용자 뷰의 반복 레이아웃을 표준 템플릿으로 제작하여 운영 효율 증대</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="relative z-10">
+                    <div class="absolute -left-10 mt-1.5 w-4 h-4 rounded-full bg-gray-400 border-4 border-white shadow"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">마이크로프로텍트</h3>
+                                <p class="text-gray-600 font-medium">팀원 (개발팀)</p>
+                            </div>
+                            <span class="text-sm text-gray-400 bg-gray-100 px-3 py-1 rounded-full mt-2 md:mt-0">2022.09 ~ 2023.05</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-600 text-sm list-disc pl-5">
+                            <li><span class="font-semibold text-gray-800">BEM 방법론 도입:</span> 클래스 네이밍 규칙을 확립하여 다수 퍼블리셔 협업 시 발생하는 CSS 충돌 해결</li>
+                            <li><span class="font-semibold text-gray-800">성능 개선:</span> 이미지 스프라이트(WebP) 및 리소스 최적화를 통한 초기 로딩 속도 개선</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Job 4 -->
+                <div class="relative z-10">
+                    <div class="absolute -left-10 mt-1.5 w-4 h-4 rounded-full bg-gray-400 border-4 border-white shadow"></div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900">빅터소프트</h3>
+                                <p class="text-gray-600 font-medium">사원 (SI디자인)</p>
+                            </div>
+                            <span class="text-sm text-gray-400 bg-gray-100 px-3 py-1 rounded-full mt-2 md:mt-0">2021.07 ~ 2022.04</span>
+                        </div>
+                        <ul class="space-y-2 text-gray-600 text-sm list-disc pl-5">
+                            <li>공공기관 및 기업형 SI 프로젝트의 Pixel-Perfect 퍼블리싱 담당</li>
+                            <li>JavaScript/jQuery를 활용한 동적 인터랙션(슬라이더, 아코디언 등) 요소 구현</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Projects Section -->
+    <section id="projects" class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-blue-600 font-semibold tracking-wide uppercase text-sm">Publishing Projects</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-2">Key Projects</h2>
+                <p class="text-gray-500 mt-2">마크업 구조 최적화 및 접근성 향상에 기여한 핵심 프로젝트입니다.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-blue-300 transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col h-full">
+                    <div class="h-2 bg-blue-600 w-full"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition">Design System UI 구축</h3>
+                                <p class="text-sm text-gray-500 mt-1">전사 공통 가이드 마크업 고도화</p>
+                            </div>
+                            <div class="text-gray-300">
+                                <i class="fas fa-layer-group fa-2x"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded">HTML5</span>
+                            <span class="px-2 py-1 bg-pink-50 text-pink-700 text-xs font-semibold rounded">SCSS/Sass</span>
+                            <span class="px-2 py-1 bg-purple-50 text-purple-700 text-xs font-semibold rounded">BEM</span>
+                            <span class="px-2 py-1 bg-yellow-50 text-yellow-700 text-xs font-semibold rounded">Vanilla JS</span>
+                        </div>
+
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            부서마다 다르게 사용되던 UI 요소를 통일하기 위해 사내 디자인 시스템 퍼블리싱을 전담했습니다. <strong>SCSS의 mixin과 variables</strong>를 적극 활용하여 테마 변경에 유연하게 대응하는 CSS 아키텍처를 설계했습니다.
+                        </p>
+
+                        <div class="mt-auto border-t border-gray-100 pt-4">
+                            <h4 class="text-xs font-bold text-gray-500 uppercase mb-2">Key Highlights</h4>
+                            <ul class="space-y-1 text-sm text-gray-600">
+                                <li><i class="fas fa-check text-blue-500 mr-2"></i>웹 접근성을 준수한 Custom Form 요소 구현</li>
+                                <li><i class="fas fa-check text-blue-500 mr-2"></i>가이드 문서 템플릿화로 개발팀 적용 시간 단축</li>
+                                <li><i class="fas fa-check text-blue-500 mr-2"></i>유지보수가 용이한 BEM 클래스 네이밍 적용</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:border-blue-300 transition-all duration-300 shadow-sm hover:shadow-xl flex flex-col h-full">
+                    <div class="h-2 bg-indigo-500 w-full"></div>
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 group-hover:text-indigo-600 transition">인터랙티브 랜딩 페이지</h3>
+                                <p class="text-sm text-gray-500 mt-1">고성능 프로모션 스크롤 인터랙션</p>
+                            </div>
+                            <div class="text-gray-300">
+                                <i class="fas fa-mouse-pointer fa-2x"></i>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded">CSS3 Animation</span>
+                            <span class="px-2 py-1 bg-yellow-50 text-yellow-700 text-xs font-semibold rounded">Vanilla JS</span>
+                            <span class="px-2 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded">Intersection Observer</span>
+                        </div>
+
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            시각적 피로도를 낮추고 이탈률을 줄이기 위한 동적 스크롤 프로모션 페이지입니다. 무거운 라이브러리 대신 <strong>순수 CSS Transform과 Vanilla JS</strong>만으로 60fps의 부드러운 애니메이션을 구현하여 성능을 최적화했습니다.
+                        </p>
+
+                        <div class="mt-auto border-t border-gray-100 pt-4">
+                            <h4 class="text-xs font-bold text-gray-500 uppercase mb-2">Key Highlights</h4>
+                            <ul class="space-y-1 text-sm text-gray-600">
+                                <li><i class="fas fa-check text-indigo-500 mr-2"></i>Intersection Observer 기반 Lazy Loading 구현</li>
+                                <li><i class="fas fa-check text-indigo-500 mr-2"></i>하드웨어 가속(GPU)을 활용한 렌더링 최적화</li>
+                                <li><i class="fas fa-check text-indigo-500 mr-2"></i>다양한 디바이스 환경에서의 애니메이션 크로스 브라우징</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strengths & Education -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-12">
+            <!-- Strengths -->
+            <div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Personal Strengths</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-100 rounded-lg p-3 text-blue-600">
+                            <i class="fas fa-crop-alt"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-gray-800">Pixel-Perfect & 클린 코드</h4>
+                            <p class="text-gray-600 text-sm mt-1">
+                                디자이너의 의도를 1px의 오차 없이 구현합니다. 동시에 불필요한 div 중첩을 피하고, 브라우저 렌더링 트리를 가볍게 유지하는 '시맨틱 마크업'을 철저히 지킵니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-100 rounded-lg p-3 text-blue-600">
+                            <i class="fas fa-people-arrows"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-gray-800">디자인과 개발을 잇는 소통</h4>
+                            <p class="text-gray-600 text-sm mt-1">
+                                다양한 SI 경험을 통해 직군 간 커뮤니케이션 방식을 체득했습니다. 기획서의 예외 케이스를 사전에 파악하여 조율함으로써 프로젝트 지연을 방지합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-100 rounded-lg p-3 text-blue-600">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-gray-800">지속적인 UI 기술 탐구</h4>
+                            <p class="text-gray-600 text-sm mt-1">
+                                완벽한 UI 구현을 위해 CSS Grid, Flexbox 등 최신 스펙을 학습하며, React 등 프론트엔드 환경에서의 마크업 역할(Tailwind 등)에도 유연하게 대처합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education & Info -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">Education & Others</h3>
+                <div class="space-y-4">
+                    <div class="border-b border-gray-100 pb-3">
+                        <span class="text-xs text-gray-400 uppercase tracking-wider">Education</span>
+                        <p class="font-bold text-gray-800 mt-1">용인송담대학교 유통과 졸업</p>
+                        <p class="text-sm text-gray-500">2014.03 ~ 2019.02</p>
+                    </div>
+                    <div class="border-b border-gray-100 pb-3">
+                        <span class="text-xs text-gray-400 uppercase tracking-wider">Training</span>
+                        <p class="font-bold text-gray-800 mt-1">UI/UX 반응형 웹디자인 & 웹퍼블리셔 양성과정</p>
+                        <p class="text-sm text-gray-500">그린아카데미 수료 | 2020.07 ~ 2020.12</p>
+                    </div>
+                    <div>
+                        <span class="text-xs text-gray-400 uppercase tracking-wider">Certificates / Military</span>
+                        <p class="font-bold text-gray-800 mt-1">2종 보통 운전면허</p>
+                        <p class="text-sm text-gray-500">육군 병장 만기 제대</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-8 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <p class="text-gray-500 text-sm">© 2026 Eom Yunsik. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- External Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>
